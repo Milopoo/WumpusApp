@@ -1,0 +1,254 @@
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="css/estilos.css" />
+    <script src="jquery.js"></script>
+    <script>
+        isWumpusDead = false;
+        isShooting = false;
+    </script>
+    <script src="cell.js"></script>
+    <script src="wumpus.js"></script>
+</head>
+
+<body>
+    <table class="pboard">
+        <tbody>
+            <tr class="row8">
+                <td class="cell18"></td>
+                <td class="cell28"></td>
+                <td class="cell38"></td>
+                <td class="cell48"></td>
+                <td class="cell58"></td>
+                <td class="cell68"></td>
+                <td class="cell78"></td>
+                <td class="cell88"></td>
+            </tr>
+            <tr class="row7">
+                <td class="cell17"></td>
+                <td class="cell27"></td>
+                <td class="cell37"></td>
+                <td class="cell47"></td>
+                <td class="cell57"></td>
+                <td class="cell67"></td>
+                <td class="cell77"></td>
+                <td class="cell87"></td>
+            </tr>
+            <tr class="row6">
+                <td class="cell16"></td>
+                <td class="cell26"></td>
+                <td class="cell36"></td>
+                <td class="cell46"></td>
+                <td class="cell56"></td>
+                <td class="cell66"></td>
+                <td class="cell76"></td>
+                <td class="cell86"></td>
+            </tr>
+            <tr class="row5">
+                <td class="cell15"></td>
+                <td class="cell25"></td>
+                <td class="cell35"></td>
+                <td class="cell45"></td>
+                <td class="cell55"></td>
+                <td class="cell65"></td>
+                <td class="cell75"></td>
+                <td class="cell85"></td>
+            </tr>
+            <tr class="row4">
+                <td class="cell14"></td>
+                <td class="cell24"></td>
+                <td class="cell34"></td>
+                <td class="cell44"></td>
+                <td class="cell54"></td>
+                <td class="cell64"></td>
+                <td class="cell74"></td>
+                <td class="cell84"></td>
+            </tr>
+            <tr class="row3">
+                <td class="cell13"></td>
+                <td class="cell23"></td>
+                <td class="cell33"></td>
+                <td class="cell43"></td>
+                <td class="cell53"></td>
+                <td class="cell63"></td>
+                <td class="cell73"></td>
+                <td class="cell83"></td>
+            </tr>
+            <tr class="row2">
+                <td class="cell12"></td>
+                <td class="cell22"></td>
+                <td class="cell32"></td>
+                <td class="cell42"></td>
+                <td class="cell52"></td>
+                <td class="cell62"></td>
+                <td class="cell72"></td>
+                <td class="cell82"></td>
+            </tr>
+            <tr class="row1">
+                <td class="cell11"></td>
+                <td class="cell21"></td>
+                <td class="cell31"></td>
+                <td class="cell41"></td>
+                <td class="cell51"></td>
+                <td class="cell61"></td>
+                <td class="cell71"></td>
+                <td class="cell81"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="mboard">
+        <tbody>
+            <tr class="row8">
+                <td class="cell18"></td>
+                <td class="cell28"></td>
+                <td class="cell38"></td>
+                <td class="cell48"></td>
+                <td class="cell58"></td>
+                <td class="cell68"></td>
+                <td class="cell78"></td>
+                <td class="cell88"></td>
+            </tr>
+            <tr class="row7">
+                <td class="cell17"></td>
+                <td class="cell27"></td>
+                <td class="cell37"></td>
+                <td class="cell47"></td>
+                <td class="cell57"></td>
+                <td class="cell67"></td>
+                <td class="cell77"></td>
+                <td class="cell87"></td>
+            </tr>
+            <tr class="row6">
+                <td class="cell16"></td>
+                <td class="cell26"></td>
+                <td class="cell36"></td>
+                <td class="cell46"></td>
+                <td class="cell56"></td>
+                <td class="cell66"></td>
+                <td class="cell76"></td>
+                <td class="cell86"></td>
+            </tr>
+            <tr class="row5">
+                <td class="cell15"></td>
+                <td class="cell25"></td>
+                <td class="cell35"></td>
+                <td class="cell45"></td>
+                <td class="cell55"></td>
+                <td class="cell65"></td>
+                <td class="cell75"></td>
+                <td class="cell85"></td>
+            </tr>
+            <tr class="row4">
+                <td class="cell14"></td>
+                <td class="cell24"></td>
+                <td class="cell34"></td>
+                <td class="cell44"></td>
+                <td class="cell54"></td>
+                <td class="cell64"></td>
+                <td class="cell74"></td>
+                <td class="cell84"></td>
+            </tr>
+            <tr class="row3">
+                <td class="cell13"></td>
+                <td class="cell23"></td>
+                <td class="cell33"></td>
+                <td class="cell43"></td>
+                <td class="cell53"></td>
+                <td class="cell63"></td>
+                <td class="cell73"></td>
+                <td class="cell83"></td>
+            </tr>
+            <tr class="row2">
+                <td class="cell12"></td>
+                <td class="cell22"></td>
+                <td class="cell32"></td>
+                <td class="cell42"></td>
+                <td class="cell52"></td>
+                <td class="cell62"></td>
+                <td class="cell72"></td>
+                <td class="cell82"></td>
+            </tr>
+            <tr class="row1">
+                <td class="cell11"></td>
+                <td class="cell21"></td>
+                <td class="cell31"></td>
+                <td class="cell41"></td>
+                <td class="cell51"></td>
+                <td class="cell61"></td>
+                <td class="cell71"></td>
+                <td class="cell81"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="reiniciar">
+        <button onclick="location.reload();">Reiniciar Juego</button>
+    </div>
+
+    <div class="empezar">
+        <button id="startGame">Empezar Juego</button>
+    </div>
+
+    <div style="position: absolute; top: 600px;">
+        <p id="points">Puntos: 0</p>
+    </div>
+
+    <div style="position: absolute; top: 630px; color: red;">
+        <p id="status"></p>
+    </div>
+
+</body>
+
+<script>
+    $(document).ready(function () {
+        wumpus = new Wumpus();
+        wumpus.reStart();
+
+        $(window).keypress(function (e) {
+            if (e.keyCode === 0 || e.keyCode === 32) {
+                e.preventDefault();
+                //console.log(JSON.stringify(wumpus));
+                var dir = wumpus.move();
+                wumpus.handMove(dir);
+            }
+        });
+
+        var timer = function () {
+            if (!wumpus.gameOver) {
+                var dir = wumpus.move();
+                wumpus.handMove(dir);
+            }
+        };
+
+        $("#startGame").click(function () {
+            setInterval(timer, 800);
+        });
+    });
+
+    $(document).keydown(function (e) {
+        switch (e.which) {
+            case 37: // left
+                wumpus.handMove(wumpus.Moves.Left);
+                break;
+
+            case 38: // up
+                wumpus.handMove(wumpus.Moves.Up);
+                break;
+
+            case 39: // right
+                wumpus.handMove(wumpus.Moves.Right);
+                break;
+
+            case 40: // down
+                wumpus.handMove(wumpus.Moves.Down);
+                break;
+
+            default:
+                return; // exit this handler for other keys
+        }
+        e.preventDefault(); // prevent the default action (scroll / move caret)
+    });
+</script>
+
+</html>
